@@ -32,8 +32,8 @@ bioconductor and CRAN (higher version then wins).
 
 ## Quick links to preferred versions
 
- * [Bioconductor 3.14](https://github.com/TyberiusPrime/r_ecosystem_track/releases/tag/2021-10-28_1) (day after release -3.14 replaced a lot of packages straight away)
- * [Bioconductor 3.13](https://github.com/TyberiusPrime/r_ecosystem_track/releases/tag/2021-05-20_1) (release date)
+ * [Bioconductor 3.14](https://github.com/TyberiusPrime/r_ecosystem_track/releases/tag/2021-10-28_1) (day after release -3.14 replaced a lot of packages straight away), hash e39d7014b32f43fe82785a8e9701cfd0ece9854d
+ * [Bioconductor 3.13](https://github.com/TyberiusPrime/r_ecosystem_track/releases/tag/2021-05-20_1) (release date) hash cf6559a7b006e8efe0d618aa4bdd13be002be78e
  * Bioconductor 3.13 (last 3.13 date, (tbd))
 
 ## Why are there multiple commits on a branch, each tagged with a numeric suffix
