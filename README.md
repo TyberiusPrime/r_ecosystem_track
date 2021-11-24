@@ -32,6 +32,3 @@ See downgraded_packages.txt for packages not included in this build.
   * nixpkgs: github:nixOS/nixpkgs?rev=7e9b0dff974c89e070da1ad85713ff3c20b0ca97
   * snapshot_date: 2021-11-19
 
-
-
-testing...
