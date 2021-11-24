@@ -2,7 +2,7 @@
 
 Per day versioned R ecosystems.
 
-This leverages (nix flakes)[https://nixos.wiki/wiki/Flakes] to make R reproducible.
+This leverages [nix flakes](https://nixos.wiki/wiki/Flakes) to make R reproducible.
 
 For every day that Bioconductor 'changed', there's (eventually) a branch in this repo, with a
 nix flake that allows you to install 'all' R packages and their ecosystem as you
@@ -32,8 +32,8 @@ bioconductor and CRAN (higher version then wins).
 
 ## Quick links to preferred versions
 
- * (Bioconductor 3.14)[https://github.com/TyberiusPrime/r_ecosystem_track/releases/tag/2021-10-28_1] (day after release -3.14 replaced a lot of packages straight away)
- * (Bioconductor 3.13)[https://github.com/TyberiusPrime/r_ecosystem_track/releases/tag/2021-05-20_1] (release date)
+ * [Bioconductor 3.14](https://github.com/TyberiusPrime/r_ecosystem_track/releases/tag/2021-10-28_1) (day after release -3.14 replaced a lot of packages straight away)
+ * [Bioconductor 3.13](https://github.com/TyberiusPrime/r_ecosystem_track/releases/tag/2021-05-20_1) (release date)
  * Bioconductor 3.13 (last 3.13 date, (tbd))
 
 ## Why are there multiple commits on a branch, each tagged with a numeric suffix
