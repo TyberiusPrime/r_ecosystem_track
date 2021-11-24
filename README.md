@@ -94,8 +94,8 @@ all you need to do is add the following to your anysnake2.toml:
 [R]
 ecosystem_tag="2021-10-28_1" # a tag from this repo
 packages = [
-  ggplot2,
-  dplyr
+  "ggplot2",
+  "dplyr"
 ]
 ```
 
