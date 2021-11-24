@@ -2,9 +2,9 @@
 
 Per day versioned R ecosystems.
 
-This leverages nix flakes to make R reproducible.
+This leverages (nix flakes)[https://nixos.wiki/wiki/Flakes] to make R reproducible.
 
-For every day that Bioconductor 'changed', there's a branch in this repo, with a
+For every day that Bioconductor 'changed', there's (eventually) a branch in this repo, with a
 nix flake that allows you to install 'all' R packages and their ecosystem as you
 would have been able to at this date.
 
@@ -30,11 +30,11 @@ while excluded packages (which do not have nix derivations) had no source
 available at that date or were present in different versions between
 bioconductor and CRAN (higher version then wins).
 
-# Quick links to prefered versions
+## Quick links to preferred versions
 
- * Bioconductor 3.14 (day after release -3.14 erplaced a lot of packages straight away)
- * Bioconductor 3.13 (release date)
- * Bioconductor 3.13 (last 3.13 date)
+ * (Bioconductor 3.14)[https://github.com/TyberiusPrime/r_ecosystem_track/releases/tag/2021-10-28_1] (day after release -3.14 replaced a lot of packages straight away)
+ * (Bioconductor 3.13)[https://github.com/TyberiusPrime/r_ecosystem_track/releases/tag/2021-05-20_1] (release date)
+ * Bioconductor 3.13 (last 3.13 date, (tbd))
 
 ## Why are there multiple commits on a branch, each tagged with a numeric suffix
 
@@ -56,3 +56,45 @@ which takes hours even on 48 cores.
 You have no idea.
 
 And it's not done yet, the why-does-this-not-build-archeology continues!
+
+
+## How to use
+
+### Option A) straight flake
+
+Here's an example flake:
+```{
+  description = "R_ecosystem  example flake";
+  inputs = rec {
+
+    r_ecosystem_track = {
+      url =
+        "github:TyberiusPrime/r_ecosystem_track?rev=e39d7014b32f43fe82785a8e9701cfd0ece9854d"; # that's 2011-10-28_1 which is bioconductor 3.14
+
+    };
+  };
+
+  outputs = { self, r_ecosystem_track }: {
+    defaultPackage.x86_64-linux = with r_ecosystem_track;
+      rWrapper.x86_64-linux.override {
+        packages = with rPackages.x86_64-linux; [ ggplot2 ];
+      };
+  };
+}
+```
+
+
+### Using anysnake2
+
+If you're using anysnake2 (>= 0.9) (which is a fancy wrapper around nix flakes and singularity), 
+all you need to do is add 
+```
+[R]
+ecosystem_tag="2021-10-28_1" # a tag from this repo
+packages = [
+  ggplot2,
+  dplyr
+]
+```
+
+
