@@ -63,7 +63,8 @@ And it's not done yet, the why-does-this-not-build-archeology continues!
 ### Option A) straight flake
 
 Here's an example flake:
-```{
+```nix
+{
   description = "R_ecosystem  example flake";
   inputs = rec {
 
@@ -86,9 +87,10 @@ Here's an example flake:
 
 ### Using anysnake2
 
-If you're using anysnake2 (>= 0.9) (which is a fancy wrapper around nix flakes and singularity), 
-all you need to do is add 
-```
+If you're using [anysnake2](https://github.com/TyberiusPrime/anysnake2) (>= 0.9) (which is a fancy wrapper around nix flakes and singularity), 
+all you need to do is add the following to your anysnake2.toml:
+
+```toml
 [R]
 ecosystem_tag="2021-10-28_1" # a tag from this repo
 packages = [
