@@ -1,0 +1,9 @@
+{
+  "Bioconductor": "3.13",
+  "R": "4.1.0",
+  "archive_date": "2021-05-28",
+  "is_release_date": false,
+  "snapshot_date": "2021-05-28",
+  "nixpkgs": "github:nixOS/nixpkgs?rev=cd63096d6d887d689543a0b97743d28995bc9bc3",
+  "comment": "20.09"
+}
