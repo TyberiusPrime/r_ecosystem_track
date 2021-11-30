@@ -100,3 +100,9 @@ packages = [
 ```
 
 
+
+### rpy2
+
+If you're using rpy2, make sure you have ovelayed the R from r_ecosystem_track into your nixpkgs.
+after versions tagged \_2, we export this as a package, otherwise you'll have to do 
+`(builtins.elemAt r_ecosystem_track.rWrapper.${system}.buildInputs 0)` to extract it from the flake.
