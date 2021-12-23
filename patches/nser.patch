@@ -1,0 +1,10 @@
+diff --git a/R/zzz.R b/R/zzz.R
+index e407bf0..12537c0 100644
+--- a/R/zzz.R
++++ b/R/zzz.R
+@@ -1,3 +1,5 @@
+ .onAttach <- function(libname, pkgname){
++tryCatch({
+   suppressPackageStartupMessages(nsetree())
++}, error = function(e) { warning("Downloads failed?")})
+ }
