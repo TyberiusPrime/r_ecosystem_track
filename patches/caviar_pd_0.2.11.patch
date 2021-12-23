@@ -1,0 +1,14 @@
+diff --git a/tools/staticlib.R b/tools/staticlib.R
+index 897b164..ade456d 100644
+--- a/tools/staticlib.R
++++ b/tools/staticlib.R
+@@ -2,7 +2,8 @@ source("../tools/cargo.R")
+ 
+ target_args <- if ( .Platform$OS.type == "windows" ) c("--target", target()) else NULL
+ 
+-if ( run("build", target_args, "--release", "--manifest-path", "rustlib/Cargo.toml") ) {
++Sys.setenv(R_CARGO_SAVE_CACHE="TRUE") # to not reset cargo_home to something in tmp
++if ( run("build", target_args, "--release", "--offline", "--manifest-path", "rustlib/Cargo.toml") ) {
+ 
+   if ( ! is.null(target_args) ) {
+     args <- commandArgs(TRUE)

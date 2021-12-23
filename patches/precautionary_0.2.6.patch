@@ -1,0 +1,21 @@
+diff --git a/src/Makevars b/src/Makevars
+index ed3893d..bf3f4e5 100644
+--- a/src/Makevars
++++ b/src/Makevars
+@@ -6,14 +6,13 @@ PKG_LIBS = -L$(LIBDIR) -lprecautionary
+ $(SHLIB): $(STATLIB)
+ 
+ # CRAN bs forbids writing $HOME and mandates wiping .cargo after each use
+-export CARGO_HOME=$(PWD)/.cargo
++# export CARGO_HOME=$(PWD)/.cargo
+ 
+ # TODO: Do I need 'cargo build --lib --release ...' below (i.e., should I add '--lib')?
+ #       OR.. is it possible that my earlier build efforts were stumbling on this point?
+ 
+ $(STATLIB):
+-	PATH="$(HOME)/.cargo/bin:$(PATH)" cargo build --lib --release --manifest-path=./rust/Cargo.toml
+-	rm -Rf $(CARGO_HOME)
++	PATH="$(HOME)/.cargo/bin:$(PATH)" cargo build --lib --release --manifest-path=./rust/Cargo.toml --offline
+ 	rm -Rf $(LIBDIR)/build
+ 
+ clean:
