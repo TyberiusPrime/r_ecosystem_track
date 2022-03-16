@@ -106,3 +106,13 @@ packages = [
 If you're using rpy2, make sure you have ovelayed the R from r_ecosystem_track into your nixpkgs.
 after versions tagged \_2, we export this as a package, otherwise you'll have to do 
 `(builtins.elemAt r_ecosystem_track.rWrapper.${system}.buildInputs 0)` to extract it from the flake.
+
+Possibly you also need to set R_HOME & R_SITE_LIBS
+```
+R = (builtins.elemAt rWrapper.buildInputs 0);
+...
+R_HOME = "${R}/lib/R"; # make rpy2 actually find R
+R_LIB_SITE = "${rWrapper}/lib/R/library";
+```
+
+
